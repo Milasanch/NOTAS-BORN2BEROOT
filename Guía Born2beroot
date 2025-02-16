@@ -1,0 +1,236 @@
+CAMBIAR REQUISITOS CONTRASEÑA                                             
+nano /etc/pam.d/common-password                                                 
+                                                                                
+MÁQUINA VIRTUAL                                                             
+         Software que simula un sistema de computación y puede ejecutar programas cmo si fuese una computadora real.  Permite a los usuarios ejecutar múltiples sistemas operativos en una sola máquina física.
+	1.  Aislamiento: Cada VM está aislada, lo que significa que los problemas en una no afectan a las otras.
+	2. Eficiencia: Permiten aprovechar mejor el hardware disponible, ejecutando múltiples sistemas operativos y aplicaciones en paralelo.
+	3. Pruebas: Son ideales para probar software en diferentes entornos sin necesidad de hardware adicional.
+	4. Despliegue: Facilitan el despliegue de aplicaciones en entornos de producción, pruebas y desarrollo.
+gets
+
+DEBIAN Y ROCKY
+
+
+‣ Rocky Linux y Debian son dos distribuciones de Linux que tienen diferentes enfoques y características. Aquí te presento algunas diferencias básicas:
+
+‣ Origen y Filosofía:
+
+• Debian: Es una de las distribuciones más antiguas y se centra en la estabilidad y la libre elección de software. Es conocida por su enfoque en la comunidad y su amplio repositorio de paquetes.
+• Rocky Linux: Nació como una respuesta a la discontinuación de CentOS, buscando proporcionar una alternativa estable y de código abierto para los usuarios empresariales. Está diseñado para ser un sucesor de CentOS y se enfoca en la compatibilidad con Red Hat Enterprise Linux (RHEL).
+‣ Gestión de Paquetes:
+
+• Debian: Utiliza el sistema de paquetes APT (Advanced Package Tool) y los paquetes DEB.
+• Rocky Linux: Utiliza el sistema de paquetes YUM/DNF y los paquetes RPM.
+‣ Ciclos de Lanzamiento:
+
+• Debian: Tiene un ciclo de lanzamiento más irregular, con versiones estables que pueden tardar varios años en salir, pero cada versión es muy estable.
+• Rocky Linux: Sigue el modelo de lanzamientos regulares similar a RHEL, con versiones que suelen alinearse con los ciclos de soporte de RHEL.
+
+‣ Objetivo de Uso
+
+• Debian: Se utiliza ampliamente tanto en servidores como en escritorios, adecuado para una variedad de usuarios.
+• Rocky Linux: Está más enfocado en entornos de servidor y empresariales, con un fuerte énfasis en la estabilidad y la seguridad.
+‣ Comunidad y Soporte:
+
+• Debian: Tiene una gran comunidad y ofrece soporte a través de foros y documentación extensa.
+• Rocky Linux: Aunque es relativamente nuevo, está respaldado por una comunidad activa y se basa en la experiencia de los desarrolladores de CentOS.
+
+APT & APTITUDE 
+
+Herramientas de gestión de paquetes. 
+
+∘ 1. Interfaz de Usuario:
+• apt: Es una interfaz de línea de comandos más sencilla y directa, diseñada para ser usada por usuarios comunes. Ofrece comandos básicos como apt install, apt remove, apt update, etc.
+• aptitude: También es una interfaz de línea de comandos, pero ofrece un modo de interfaz de usuario más avanzado y visual, lo que facilita la navegación y selección de paquetes.
+∘ 2. Resolución de Dependencias:
+• apt: Utiliza un algoritmo simple para resolver dependencias, aunque en general es eficaz.
+• aptitude: Utiliza un algoritmo más sofisticado y puede manejar mejor situaciones complejas de dependencias. A menudo sugiere soluciones alternativas si hay conflictos.
+∘ 3. Características Adicionales:
+• apt: Se centra en tareas básicas de gestión de paquetes y es más ligero en términos de funcionalidades.
+• aptitude: Ofrece características avanzadas, como una visualización de la jerarquía de paquetes y la posibilidad de marcar paquetes como "mantener" o "ignorar" en futuras actualizaciones.
+∘ 4. Comandos y Opciones:
+• apt: Tiene una sintaxis más moderna y simplificada. Por ejemplo, apt install nombre-paquete es la forma común de instalar.
+• aptitude: Puede requerir más opciones y es más extenso en sus comandos. Por ejemplo, aptitude install nombre-paquete.
+∘ 5. Disponibilidad:
+• apt: Está disponible por defecto en las versiones recientes de Debian y Ubuntu.
+• aptitude: Puede no estar instalado de manera predeterminada en algunas distribuciones, aunque es fácil de instalar.
+APPARMOR
+
+	Es un sistema de control de acceso que proporciona seguridad a las aplicaciones en sistemas operativos basados en Linux. Su objetivo es restringir las capacidades de los programas mediante perfiles que definen qué recursos (archivos, redes, etc.) pueden acceder. Aquí te explico algunas características clave de AppArmor:
+
+∘ 1. Perfiles de Seguridad:
+‣ AppArmor utiliza perfiles que especifican qué recursos tiene permitido acceder una aplicación. Cada perfil puede ser configurado para un programa específico, limitando así sus acciones.
+∘ 2. Modos de Ejecución:
+‣ Los perfiles pueden estar en modo enforcement (ejecución), donde se aplican las restricciones, o en modo complain (queja), donde se registran las violaciones sin bloquear el acceso.
+∘ 3. Facilidad de Uso:
+‣ AppArmor es generalmente considerado más fácil de configurar que otros sistemas de control de acceso, como SELinux, debido a su enfoque basado en perfiles y su sintaxis más sencilla.
+∘ 4. Integración:
+‣ Está integrado en varias distribuciones de Linux, incluyendo Ubuntu y openSUSE, y se puede usar para proteger aplicaciones críticas y reducir la superficie de ataque de un sistema.
+∘ 5. Seguridad Adicional:
+‣ Al aplicar restricciones específicas a las aplicaciones, AppArmor ayuda a mitigar el impacto de vulnerabilidades de seguridad. Si una aplicación se ve comprometida, las restricciones impuestas por AppArmor limitan lo que el atacante puede hacer.
+LVM
+		Es un sistema de gestión de volúmenes lógicos en Linux que permite administrar el almacenamiento de manera más flexible y eficiente en comparación con los métodos tradicionales de particionamiento de discos. Aquí te explico sus características principales:
+
+	Es un sistema de gestión de volúmenes lógicos en Linux que permite administrar el almacenamiento de manera más flexible y eficiente en comparación con los métodos tradicionales de particionamiento de discos. 
+
+∘ 1. Volúmenes Lógicos:
+∘ LVM permite crear volúmenes lógicos que se pueden redimensionar, mover y gestionar de forma dinámica, lo que facilita la administración del espacio en disco.
+∘ 2. Agrupación de Discos:
+∘ Puedes combinar múltiples discos físicos en un solo grupo de volúmenes (VG, o Volume Group). Esto permite utilizar el espacio de varios discos como una única unidad lógica.
+∘ 3. Redimensionamiento Dinámico:
+∘ Puedes aumentar o disminuir el tamaño de los volúmenes lógicos en tiempo real, sin necesidad de reiniciar el sistema, lo que es muy útil para adaptarse a cambios en las necesidades de almacenamiento.
+∘ 4. Instantáneas (Snapshots):
+∘ LVM permite crear instantáneas de volúmenes lógicos, lo que facilita la realización de copias de seguridad y la recuperación de datos, ya que puedes capturar el estado de un volumen en un momento específico.
+∘ 5. Flexibilidad:
+∘ Puedes mover volúmenes lógicos de un disco a otro sin interrumpir su funcionamiento, lo que facilita la migración de datos y la gestión del espacio.
+∘ 6. Mejor Utilización del Espacio:
+∘ LVM ayuda a optimizar el uso del espacio en disco, permitiendo asignar espacio de manera más eficiente entre diferentes volúmenes y aplicaciones.
+
+
+
+SSH
+	SSH es un protocolo de red que permite la comunicación segura entre un cliente y un servidor a través de una red insegura. Se utiliza comúnmente para acceder a sistemas de forma remota y ejecutar comandos en servidores de manera segura.
+
+WORDPRESS
+
+	Servidor para mi pagina web 
+
+	WordPress es un sistema de gestión de contenido (CMS, por sus siglas en inglés: Content Management System) que permite a los usuarios crear, administrar y publicar sitios web de manera sencilla. Originalmente diseñado como una plataforma de blogs, ha evolucionado y se utiliza hoy en día para crear una amplia variedad de sitios web, desde blogs personales hasta complejas tiendas en línea y portales empresariales. Aquí te detallo algunas de sus principales características y usos:
+
+
+LITESPEED
+
+	Servidor web de alto rendimiento diseñado para servir contenido web de manera rápida y eficiente.
+
+• Características Clave de LiteSpeed:
+• Alto Rendimiento:
+• 
+• LiteSpeed es capaz de gestionar múltiples conexiones simultáneas con menos consumo de recursos, lo que mejora el tiempo de carga de las páginas.
+• Compatibilidad con Apache:
+• 
+• Ofrece una alta compatibilidad con configuraciones de Apache, lo que facilita la migración de sitios web existentes sin necesidad de reescribir la configuración.
+• Manejo de Conexiones:
+• 
+• Utiliza una arquitectura de eventos que permite una gestión eficiente de las conexiones, lo que resulta en un mejor rendimiento bajo cargas pesadas.
+• Cache Integrado:
+• 
+• LiteSpeed incluye un sistema de caché para contenido estático y dinámico, lo que puede acelerar aún más el tiempo de carga de las páginas.
+• Seguridad:
+• 
+• Proporciona características de seguridad avanzadas, como protección contra ataques DDoS, y herramientas para mitigar vulnerabilidades comunes.
+• Interfaz de Administración:
+• 
+• Viene con una interfaz de usuario intuitiva que facilita la configuración y gestión del servidor.
+
+• Usos Comunes:
+• Hosting de Sitios Web: Ideal para proveedores de hosting y desarrolladores que buscan un servidor web rápido y eficiente.
+• Aplicaciones Web: Se utiliza a menudo para servir aplicaciones web que requieren un alto rendimiento, como sitios de comercio electrónico o aplicaciones empresariales.
+• Optimización de WordPress: Muchas configuraciones de LiteSpeed son utilizadas para mejorar la velocidad y rendimiento de sitios de WordPress, a menudo en combinación con LiteSpeed Cache.
+
+
+
+COMANDO
+
+Obtener signature
+	shashum nombre.vdi
+
+COMPROBAR INTERFAZ GRÁFICA
+	ls /usr/bin/*session
+
+COMPROBAR UFW: Ofrece una interfaz más simple y amigable para usuarios que quizás no estén familiarizados con las complejidades de iptable
+	sudo ufw status
+
+COMPROBAR SERVICIO SSH 
+	sudo service ssh status
+
+COMPROBAR USO DE SO Debian
+	uname -v
+
+COMPROBAR QUE USUARIO ESTE DENTRO DE  LOS GRUPOS
+	getent group sudo
+	getent group user42
+
+CREAR NUEVO USUARIO
+	sudo adduser name_user
+
+CREAR NUEVO GRUPO
+	sudo addgroup
+
+AÑADIR USUARIO A GRUPO
+	sudo adduser name_user evaluating
+
+COMPROBAR
+	getent group name
+
+COMPROBAR QUE L HOSTNAME ES CORRECTO
+	hostname
+
+MODIFICAR HOSTNAME PARA REEMPLAZAR
+	sudo nano /etc/hostname
+	sudo nano /etc/hosts
+
+REINICIAR MAQUINA
+	sudo reboot
+
+COMPROBAR PARTICIONES
+	lsblk
+
+COMPROBAR QUE SUDO ESTA INSTALADO
+	which sudo     o dpkg -s sudo
+
+INTRODUCIR NUEVO USUARIO DENTRO DEL GRUPO SUDO
+sudo adduser name sudo 
+
+comprobar getent group sudo
+
+MOSTRAR SCRIPT DE REGLAS IMPUESTAS PARA SUDO
+nano /etc/sudoers.d/sudo_config
+
+MOSTRAR QUE LA RUTA /var/log/sudo/
+
+	/var/log/sudo# cd
+	cd  /var/log/sudo# ls
+	/var/log/sudo#
+
+EJECUTAR COMANDO SUDO Y COMPROBAR QUE SE ACTUALIZA
+/var/log/sudo# sudo nano hola
+
+/var/log/sudo# cat sudo_config
+
+
+COMPROMBAR QUE UFW ESTA INSTALADO Y FUNCIONA
+
+dpkg -s ufw
+
+sudo service ufw status
+
+CREAR NUEVA REGLA 
+
+sudo ufw status numbered
+
+sudo ufw allow 8080
+
+sudo ufw status numbered
+
+ELIMINAR REGLA
+
+sudo ufw delete num_rule
+
+
+which ssh
+
+sudo service ssh status
+
+
+INICIAR SESION CON SSH 
+
+ssh milsanch@localhost -p 4242
+
+
+MODIFICAR  PARAMETROS 
+sudo crontab -u root -e
+
+sudo /etc/init.d/cron stop
+ 
+sudo /etc/init.d/cron start
